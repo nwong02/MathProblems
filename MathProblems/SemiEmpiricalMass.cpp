@@ -33,10 +33,22 @@ double nuclearBinding(int massNumber, int atomicNumber)
 	double fifthTerm = a_5 / pow(massNumber, 1.0 / 2.0);
 	
 	bindingEnergy = firstTerm - secondTerm - thirdTerm - fourthTerm + fifthTerm;
-	cout << "The binding energy is: " << bindingEnergy;
+
+	cout << "The binding energy is: " << bindingEnergy << " MeV" << endl;
+
+	cout << "The binding energy per nucleon is: " << bindingEnergy / massNumber << " MeV" << endl;
+
+
+	
+
 	return bindingEnergy;
 }
 
+
+//double largestBindingEnergy(double A)
+//{
+//	
+//}
 
 int main()
 {
@@ -50,6 +62,7 @@ int main()
 	cin >> Z;
 
 	nuclearBinding(A, Z);
+
 
 	/*double a = 16.0;
 	double squareA = pow(a, 2);
