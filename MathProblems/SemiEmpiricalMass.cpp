@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 
 using namespace std;
 
@@ -38,17 +39,24 @@ double nuclearBinding(int massNumber, int atomicNumber)
 
 	cout << "The binding energy per nucleon is: " << bindingEnergy / massNumber << " MeV" << endl;
 
-
-	
-
 	return bindingEnergy;
 }
 
 
-//double largestBindingEnergy(double A)
-//{
-//	
-//}
+
+
+double largestBindingEnergy(double atomicNumber)
+{
+	double atomicMass = 0.0;
+	cout << "Enter a value for the atomic mass: ";
+	cin >> atomicMass;
+	int upperLimit = 3 * atomicMass;
+
+	for (int i = atomicNumber; i < upperLimit; i++)
+	{
+		nuclearBinding(atomicMass, i);
+	}
+}
 
 int main()
 {
