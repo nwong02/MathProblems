@@ -4,6 +4,8 @@
 using namespace std;
 
 
+double nuclearBinding(int massNumber, int atomicNumber);
+
 double nuclearBinding(int massNumber, int atomicNumber)
 {
 	double bindingEnergy = 0.0;
@@ -46,14 +48,16 @@ double nuclearBinding(int massNumber, int atomicNumber)
 
 double largestBindingEnergy(double atomicNumber)
 {
+	int lowerLimit = atomicNumber;
 	int upperLimit = 3 * atomicNumber;
+	int rangeOfValues = upperLimit + lowerLimit;
 	double largestBindingPerNucleon = 0.0;
 
-	for (int i = atomicNumber; i < upperLimit; i++)
+	for (int i = lowerLimit; i < rangeOfValues; i++)
 	{
-		largestBindingPerNucleon = nuclearBinding(i, upperLimit);
+		largestBindingPerNucleon = nuclearBinding(i, rangeOfValues) / i;
+		cout << largestBindingPerNucleon << endl;
 	}
-	cout << largestBindingPerNucleon;
 	return 0;
 }
 
@@ -71,6 +75,7 @@ int main()
 	cout << "The binding energy is: " << nuclearBinding(A, Z) << " MeV" << endl;
 	cout << "The binding energy per nucleon is: " << nuclearBinding(A, Z) / A << " MeV" << endl;
 	
+	cout << "The largest binding energy per nucleon: " << largestBindingEnergy(Z) << " MeV" << endl;
 	
 
 
