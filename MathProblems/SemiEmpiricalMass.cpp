@@ -47,15 +47,15 @@ double nuclearBinding(int massNumber, int atomicNumber)
 
 double largestBindingEnergy(double atomicNumber)
 {
-	double atomicMass = 0.0;
-	cout << "Enter a value for the atomic mass: ";
-	cin >> atomicMass;
-	int upperLimit = 3 * atomicMass;
+	int upperLimit = 3 * atomicNumber;
+	double largestBindingPerNucleon = 0.0;
 
 	for (int i = atomicNumber; i < upperLimit; i++)
 	{
-		nuclearBinding(atomicMass, i);
+		largestBindingPerNucleon = nuclearBinding(i, upperLimit);
 	}
+	cout << largestBindingPerNucleon;
+	return 0;
 }
 
 int main()
@@ -70,6 +70,7 @@ int main()
 	cin >> Z;
 
 	nuclearBinding(A, Z);
+	largestBindingEnergy(Z);
 
 
 	/*double a = 16.0;
