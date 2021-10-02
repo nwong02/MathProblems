@@ -35,9 +35,8 @@ double nuclearBinding(int massNumber, int atomicNumber)
 	
 	bindingEnergy = firstTerm - secondTerm - thirdTerm - fourthTerm + fifthTerm;
 
-	cout << "The binding energy is: " << bindingEnergy << " MeV" << endl;
 
-	cout << "The binding energy per nucleon is: " << bindingEnergy / massNumber << " MeV" << endl;
+	
 
 	return bindingEnergy;
 }
@@ -69,8 +68,10 @@ int main()
 	cout << "Enter the atomic number of that atom: ";
 	cin >> Z;
 
-	nuclearBinding(A, Z);
-	largestBindingEnergy(Z);
+	cout << "The binding energy is: " << nuclearBinding(A, Z) << " MeV" << endl;
+	cout << "The binding energy per nucleon is: " << nuclearBinding(A, Z) / A << " MeV" << endl;
+	
+	
 
 
 	/*double a = 16.0;
